@@ -187,7 +187,7 @@
     {
         "id": "1f6f6d80-2568-4232-aff3-c174a25950d8",
         "text": " *",
-        "value": -1
+        "value": -100
     },
     {
         "id": "b1d2e84a-7fb3-476c-8d96-29dca164de1c",
@@ -258,11 +258,6 @@
         "id": "8d5b27ba-8893-48cb-9fba-5b2492e2edd4",
         "text": " despite",
         "value": -1
-    },
-    {
-        "id": "3644db0b-65b5-4b06-a2c0-b0a1aa6faf83",
-        "text": " sh",
-        "value": -100
     },
     {
         "id": "be100f77-fbce-4339-82f6-265725644523",
@@ -340,11 +335,6 @@
         "value": -100
     },
     {
-        "id": "93b3d307-a0db-4d11-8639-f07b1a5e0a54",
-        "text": " lucky",
-        "value": -100
-    },
-    {
         "id": "5bfdad56-bc10-4990-a62e-4e271d1dd87e",
         "text": " pause",
         "value": -100
@@ -393,11 +383,6 @@
         "id": "703ebe41-4544-47f5-966c-3fce6f671aae",
         "text": " untouched",
         "value": -100
-    },
-    {
-        "id": "550ff387-3933-4089-8d05-25908772e2fa",
-        "text": " like",
-        "value": -1
     },
     {
         "id": "40a18a86-5716-47e9-8234-bed1b3dfca90",
@@ -510,16 +495,6 @@
         "value": -100
     },
     {
-        "id": "8bb2d937-7716-4792-943b-0ef0a796008e",
-        "text": " can't",
-        "value": -1
-    },
-    {
-        "id": "5c5f596b-2330-483b-abe2-d421f5d24731",
-        "text": " can",
-        "value": -1
-    },
-    {
         "id": "906a5ca4-a541-4a4e-b2ac-625d0244e3df",
         "text": " didn't",
         "value": -100
@@ -527,7 +502,7 @@
     {
         "id": "78929181-0758-42ff-908b-a9f76d38ec72",
         "text": " wasn't",
-        "value": -50
+        "value": -1
     },
     {
         "id": "9963bbab-c76e-41c0-b9f7-fa25fba2f0a6",
@@ -542,11 +517,6 @@
     {
         "id": "e251b955-00f4-4ef9-bb25-14f480831962",
         "text": " Probably",
-        "value": -100
-    },
-    {
-        "id": "b3732834-bbe5-4761-8dd8-4185fa3614fc",
-        "text": " jol",
         "value": -100
     },
     {
@@ -567,11 +537,6 @@
     {
         "id": "493110ac-8812-4db5-b3b9-4816ad6ff803",
         "text": " more",
-        "value": -100
-    },
-    {
-        "id": "ef3e4228-266f-46d3-85f8-92cbbed0fcd5",
-        "text": " voice",
         "value": -100
     },
     {
@@ -655,7 +620,7 @@
         "value": -100
     },
     {
-        "id": "62da9d80-caf7-4f31-9559-35c44326d51b",
+        "id": "6ef8928c-88ae-4a25-b401-9c00ba6f15cc",
         "text": "Somewhere",
         "value": -100
     },
@@ -705,6 +670,11 @@
         "value": 1
     },
     {
+        "id": "73c98d47-6d87-44b7-9eb2-04ae1db14601",
+        "text": " slut",
+        "value": 1
+    },
+    {
         "id": "a22049f1-98dc-4488-add7-7707d8fe089f",
         "text": " needed",
         "value": -1
@@ -750,8 +720,23 @@
         "value": -100
     },
     {
-        "id": "7cbbc1ae-fd30-4043-bed8-636c7fcb8bbf",
-        "text": "[9289]",
+        "id": "239b3cd6-8f18-45a1-9e28-379015d2e490",
+        "text": "didn't",
+        "value": -100
+    },
+    {
+        "id": "450b7ac8-c3fe-4611-a189-0594c4504d4d",
+        "text": " should",
+        "value": -100
+    },
+    {
+        "id": "c3bda5a5-9d1d-463e-8f97-eab9936dee33",
+        "text": "n't",
+        "value": -100
+    },
+    {
+        "id": "932f9c7c-742e-4f3b-956c-b77203cfb467",
+        "text": " Didn't",
         "value": -100
     },
     {
