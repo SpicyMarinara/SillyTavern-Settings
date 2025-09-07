@@ -1,0 +1,21 @@
+{
+    "id": "f20dde0c-c099-4ea1-bef9-8a16c04f7f98",
+    "scriptName": "⓹ Fix Elipsis",
+    "findRegex": "/\\.{3}/g",
+    "replaceString": "…",
+    "trimStrings": [],
+    "placement": [
+        1,
+        2,
+        3,
+        5,
+        6
+    ],
+    "disabled": false,
+    "markdownOnly": false,
+    "promptOnly": false,
+    "runOnEdit": true,
+    "substituteRegex": 0,
+    "minDepth": null,
+    "maxDepth": null
+}

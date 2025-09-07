@@ -1,0 +1,21 @@
+{
+    "id": "d1251733-4959-4304-970c-395754685b25",
+    "scriptName": "⓸ Fix Apostrophes",
+    "findRegex": "/[‘’]/g",
+    "replaceString": "'",
+    "trimStrings": [],
+    "placement": [
+        1,
+        2,
+        3,
+        5,
+        6
+    ],
+    "disabled": false,
+    "markdownOnly": false,
+    "promptOnly": false,
+    "runOnEdit": true,
+    "substituteRegex": 0,
+    "minDepth": null,
+    "maxDepth": null
+}

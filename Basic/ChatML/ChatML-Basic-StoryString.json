@@ -1,0 +1,12 @@
+{
+    "story_string": "<|im_start|>system\n{{#if system}}{{system}}\n# Roleplay Context:\n{{/if}}{{#if wiBefore}}## World Info:\n{{wiBefore}}\n{{/if}}{{#if description}}## {{char}}'s Description:\n{{description}}\n{{/if}}{{#if personality}}## {{char}}'s Personality:\n{{personality}}\n{{/if}}{{#if persona}}## {{user}}'s Persona:\n{{persona}}\n{{/if}}{{#if scenario}}## Scenario:\n{{scenario}}\n{{/if}}{{#if wiAfter}}## Past Events:\n{{wiAfter}}{{/if}}\n{{#if mesExamples}}## {{char}}'s Example Response:\n{{mesExamples}}\n{{/if}}# Instruction:\nTaking all the above and the entire conversation's context into consideration, please write {{char}}'s next response in the chat below this line.<|im_end|>{{trim}}",
+    "example_separator": "",
+    "chat_start": "",
+    "use_stop_strings": false,
+    "allow_jailbreak": false,
+    "always_force_name2": true,
+    "trim_sentences": true,
+    "include_newline": false,
+    "single_line": false,
+    "name": "ChatML-Basic"
+}

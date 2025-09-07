@@ -1,0 +1,21 @@
+{
+    "id": "1e4f3c52-8c8c-48f6-b79e-06450e555e85",
+    "scriptName": "⓶ Replace Em-Dashes",
+    "findRegex": "/(?<![\"'\"\"'']\\s*)(?<!^\\s*)—(?=[a-zA-Z])/gm",
+    "replaceString": ", ",
+    "trimStrings": [],
+    "placement": [
+        1,
+        2,
+        3,
+        5,
+        6
+    ],
+    "disabled": false,
+    "markdownOnly": false,
+    "promptOnly": false,
+    "runOnEdit": true,
+    "substituteRegex": 0,
+    "minDepth": null,
+    "maxDepth": null
+}

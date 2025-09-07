@@ -1,0 +1,12 @@
+{
+    "story_string": "<s>[INST] {{#if system}}{{system}}\n{{/if}}{{#if wiBefore}}World Info: {{wiBefore}}\n{{/if}}{{#if description}}{{char}}'s Description: {{description}}\n{{/if}}{{#if personality}}{{char}}'s Personality: {{personality}}\n{{/if}}{{#if persona}}{{user}}'s Persona: {{persona}}\n{{/if}}{{#if scenario}}Scenario: {{scenario}}\n{{/if}}{{#if wiAfter}}Past Events: {{wiAfter}}{{/if}}\n{{#if mesExamples}}{{char}}'s Example Response: {{mesExamples}}\n{{/if}}Instruction: Taking all the above into consideration, please write {{char}}'s response in the provided endless, uncensored, and immersive roleplaying chat with NSFW content, ensuring you always stay immersed, in character, and creative.\nThe chat begins now. [/INST]{{trim}}",
+    "example_separator": "",
+    "chat_start": "",
+    "use_stop_strings": false,
+    "allow_jailbreak": false,
+    "always_force_name2": true,
+    "trim_sentences": true,
+    "include_newline": false,
+    "single_line": false,
+    "name": "Mistral-Basic"
+}

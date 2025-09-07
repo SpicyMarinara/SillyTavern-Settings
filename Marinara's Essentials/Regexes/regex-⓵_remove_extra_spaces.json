@@ -1,0 +1,21 @@
+{
+    "id": "24596572-10fe-46b3-8c5c-a8520551f0b6",
+    "scriptName": "⓵ Remove Extra Spaces",
+    "findRegex": "/ {2,}/g",
+    "replaceString": " ",
+    "trimStrings": [],
+    "placement": [
+        1,
+        2,
+        3,
+        5,
+        6
+    ],
+    "disabled": false,
+    "markdownOnly": false,
+    "promptOnly": false,
+    "runOnEdit": true,
+    "substituteRegex": 0,
+    "minDepth": null,
+    "maxDepth": null
+}
