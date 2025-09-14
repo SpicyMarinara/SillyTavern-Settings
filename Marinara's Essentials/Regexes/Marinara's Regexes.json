@@ -1,0 +1,143 @@
+[
+    {
+        "id": "24596572-10fe-46b3-8c5c-a8520551f0b6",
+        "scriptName": "⓵ Remove Extra Spaces",
+        "findRegex": "/ {2,}/g",
+        "replaceString": " ",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2,
+            3,
+            5,
+            6
+        ],
+        "disabled": false,
+        "markdownOnly": false,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "1e4f3c52-8c8c-48f6-b79e-06450e555e85",
+        "scriptName": "⓶ Replace Em-Dashes",
+        "findRegex": "/(?<![\"'\"\"''“”‘’]\\s*)(?<!^\\s*)—(?=[a-zA-Z])(?![\"'\"\"''“”‘’])/gm",
+        "replaceString": ", ",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2,
+            3,
+            5,
+            6
+        ],
+        "disabled": false,
+        "markdownOnly": false,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "9e3f51a7-3c46-4b77-8cb4-b57d95ae5bf1",
+        "scriptName": "⓷ Fix Double Quotations",
+        "findRegex": "/[“”]/g",
+        "replaceString": "\"",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2,
+            3,
+            5,
+            6
+        ],
+        "disabled": false,
+        "markdownOnly": false,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "d1251733-4959-4304-970c-395754685b25",
+        "scriptName": "⓸ Fix Apostrophes",
+        "findRegex": "/[‘’]/g",
+        "replaceString": "'",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2,
+            3,
+            5,
+            6
+        ],
+        "disabled": false,
+        "markdownOnly": false,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "f20dde0c-c099-4ea1-bef9-8a16c04f7f98",
+        "scriptName": "⓹ Fix Elipsis",
+        "findRegex": "/\\.{3}/g",
+        "replaceString": "…",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2,
+            3,
+            5,
+            6
+        ],
+        "disabled": false,
+        "markdownOnly": false,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "32f37c94-059a-42d3-abe3-6d75748a9041",
+        "scriptName": "⓺ Clean Status Tracker",
+        "findRegex": "<!--\\n([\\s\\S]*?)-->\\n+",
+        "replaceString": "",
+        "trimStrings": [],
+        "placement": [
+            2,
+            6
+        ],
+        "disabled": false,
+        "markdownOnly": false,
+        "promptOnly": true,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": 2,
+        "maxDepth": null
+    },
+    {
+        "id": "8bc640a5-c554-4357-a809-0dce31ac53c4",
+        "scriptName": "⓻ Clean Info Box",
+        "findRegex": "```md\\n--- Info Box ---\\n([\\s\\S]*?)```\\n+",
+        "replaceString": "",
+        "trimStrings": [],
+        "placement": [
+            2,
+            6
+        ],
+        "disabled": false,
+        "markdownOnly": false,
+        "promptOnly": true,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": 2,
+        "maxDepth": null
+    }
+]

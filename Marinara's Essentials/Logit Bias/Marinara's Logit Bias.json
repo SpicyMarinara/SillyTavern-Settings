@@ -1,10 +1,5 @@
 [
     {
-        "text": "⚠️",
-        "value": -100,
-        "id": "bfc72168-14b5-41b1-be9e-64432e8daba4"
-    },
-    {
         "text": "Sorry",
         "value": -100,
         "id": "640123c0-66bd-4035-aa67-e32391571fb7"
@@ -38,11 +33,6 @@
         "text": "Under",
         "value": -100,
         "id": "f0c42eb4-b95c-4d18-a0e2-ace4f244f2e6"
-    },
-    {
-        "id": "74378300-0668-49ae-b748-fdee8a9e3533",
-        "text": ">I",
-        "value": -100
     },
     {
         "id": "385d36f3-980e-472a-91d9-fe64dfc1874a",
@@ -165,11 +155,6 @@
         "value": -100
     },
     {
-        "id": "06b6990a-c434-406a-bc7a-956af4cc99ad",
-        "text": ">A",
-        "value": -100
-    },
-    {
         "id": "fec9e605-9b38-46b0-b23e-d4945ea48bd8",
         "text": "━+ Filters",
         "value": 0
@@ -187,7 +172,7 @@
     {
         "id": "1f6f6d80-2568-4232-aff3-c174a25950d8",
         "text": " *",
-        "value": -100
+        "value": -1
     },
     {
         "id": "b1d2e84a-7fb3-476c-8d96-29dca164de1c",
@@ -202,11 +187,6 @@
     {
         "id": "8929d324-f484-44f2-bddd-c00933c1170c",
         "text": " **",
-        "value": -100
-    },
-    {
-        "id": "5f43a1ec-fbe4-4345-ba0b-433c0b6ea864",
-        "text": " |",
         "value": -100
     },
     {
