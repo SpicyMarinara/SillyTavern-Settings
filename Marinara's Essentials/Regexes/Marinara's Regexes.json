@@ -1,7 +1,7 @@
 [
     {
         "id": "a17c99e9-bf03-4a43-9663-c228d1bab72b",
-        "scriptName": "⓽ Clean HTML (From Outgoing Prompt)",
+        "scriptName": "Clean HTML (From Outgoing Prompt)",
         "findRegex": "/\\s?<(?!\\!--)(?:\"[^\"]*\"|'[^']*'|[^'\">])*>/g",
         "replaceString": "",
         "trimStrings": [],
@@ -17,32 +17,14 @@
         "maxDepth": null
     },
     {
-        "id": "8bc640a5-c554-4357-a809-0dce31ac53c4",
-        "scriptName": "⓺ Clean Info Box (Keep Last)",
-        "findRegex": "/```md\\n--- Info Box ---\\n[\\s\\S]*?```\\n+/g",
+        "id": "680a76e1-2312-4143-b61f-b74a806d3cfd",
+        "scriptName": "Clean Optional Stuff (Keeping Last)",
+        "findRegex": "/```\\n[\\s\\S]*?\\n---\\n[\\s\\S]*?```\\n+/g",
         "replaceString": "",
         "trimStrings": [],
         "placement": [
-            2,
-            6
-        ],
-        "disabled": false,
-        "markdownOnly": false,
-        "promptOnly": true,
-        "runOnEdit": true,
-        "substituteRegex": 0,
-        "minDepth": 3,
-        "maxDepth": null
-    },
-    {
-        "id": "32f37c94-059a-42d3-abe3-6d75748a9041",
-        "scriptName": "⓻ Clean Status Tracker (Keep Last)",
-        "findRegex": "/<!--\\n[\\s\\S]*?-->\\n+/g",
-        "replaceString": "",
-        "trimStrings": [],
-        "placement": [
-            2,
-            6
+            1,
+            2
         ],
         "disabled": false,
         "markdownOnly": false,
@@ -54,7 +36,7 @@
     },
     {
         "id": "f20dde0c-c099-4ea1-bef9-8a16c04f7f98",
-        "scriptName": "⓺ Fix Elipsis",
+        "scriptName": "Fix Elipsis",
         "findRegex": "/\\.{3}/g",
         "replaceString": "…",
         "trimStrings": [],
@@ -75,7 +57,7 @@
     },
     {
         "id": "d1251733-4959-4304-970c-395754685b25",
-        "scriptName": "⓹ Fix Apostrophes",
+        "scriptName": "Fix Apostrophes",
         "findRegex": "/[‘’]/g",
         "replaceString": "'",
         "trimStrings": [],
@@ -96,7 +78,7 @@
     },
     {
         "id": "9e3f51a7-3c46-4b77-8cb4-b57d95ae5bf1",
-        "scriptName": "⓸ Fix Double Quotations",
+        "scriptName": "Fix Double Quotations",
         "findRegex": "/[“”]/g",
         "replaceString": "\"",
         "trimStrings": [],
@@ -117,7 +99,7 @@
     },
     {
         "id": "1e4f3c52-8c8c-48f6-b79e-06450e555e85",
-        "scriptName": "⓷ Replace Em-Dashes",
+        "scriptName": "Replace Em-Dashes",
         "findRegex": "/(?<![\"'\"\"''“”‘’]\\s*)(?<!^\\s*)—(?=[a-zA-Z])(?![\"'\"\"''“”‘’])/gm",
         "replaceString": ", ",
         "trimStrings": [],
@@ -138,7 +120,7 @@
     },
     {
         "id": "173953a9-31c3-4295-9712-87e22090ebf7",
-        "scriptName": "⓶ Remove Extra New Lines",
+        "scriptName": "Remove Extra New Lines",
         "findRegex": "/\\n{2,}/g",
         "replaceString": "\n\n",
         "trimStrings": [],
@@ -159,7 +141,7 @@
     },
     {
         "id": "24596572-10fe-46b3-8c5c-a8520551f0b6",
-        "scriptName": "⓵ Remove Extra Spaces",
+        "scriptName": "Remove Extra Spaces",
         "findRegex": "/ {2,}/g",
         "replaceString": " ",
         "trimStrings": [],
@@ -172,6 +154,57 @@
         ],
         "disabled": false,
         "markdownOnly": false,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "83d27b4a-ece5-48df-ae55-3d1d3c2dde41",
+        "scriptName": "Format User's Stats (Only Output)",
+        "findRegex": "```\\n[\\s\\S]*?[?=Stats]\\n---\\n- Health: ([\\d]+)%\\n- Sustenance: ([\\d]+)%\\n- Energy: ([\\d]+)%\\n- Hygiene: ([\\d]+)%\\n- Arousal: ([\\d]+)%\\n💎: ([\\s\\S]*?)[?=\\n]```\\n?",
+        "replaceString": "<div style=\"width:100%; border:2px solid #444; border-radius:10px; padding:10px; font-family:Arial, sans-serif; box-sizing:border-box; background:transparent;\">\n<div style=\"font-weight:bold; font-size:18px; margin-bottom:8px; text-align:center;\">\n{{user}}'s Stats\n</div>\n<div style=\"width:100%; height:2px; background:linear-gradient(to right, transparent, #444, transparent); margin:8px 0;\"></div>\n\n<!-- Health -->\n<div style=\"margin:6px 0; display:flex; align-items:left;\">\n<span style=\"display:inline-block; width:90px;\">Health: </span>\n<div style=\"display:inline-block; width:70%; height:16px; position:relative; background:linear-gradient(to right, #cc3333 0%, #e65c00 16%, #ff8800 33%, #ccaa00 50%, #99cc00 66%, #66cc33 83%, #33cc66 100%); border-radius:8px; overflow:hidden; vertical-align:middle;\">\n<div style=\"position:absolute; right:0; top:0; bottom:0; width:calc(100% - $1%); background:#333; border-radius:0 8px 8px 0; border-left:1px solid #333;\"></div>\n</div>\n<span style=\"color:#fff; font-size:12px; margin-left:8px; min-width:30px;\">$1%</span>\n</div>\n\n<!-- Sustenance -->\n<div style=\"margin:6px 0; display:flex; align-items:left;\">\n<span style=\"display:inline-block; width:90px;\">Sustenance: </span>\n<div style=\"display:inline-block; width:70%; height:16px; position:relative; background:linear-gradient(to right, #cc3333 0%, #e65c00 16%, #ff8800 33%, #ccaa00 50%, #99cc00 66%, #66cc33 83%, #33cc66 100%); border-radius:8px; overflow:hidden; vertical-align:middle;\">\n<div style=\"position:absolute; right:0; top:0; bottom:0; width:calc(100% - $2%); background:#333; border-radius:0 8px 8px 0; border-left:1px solid #333;\"></div>\n</div>\n<span style=\"color:#fff; font-size:12px; margin-left:8px; min-width:30px;\">$2%</span>\n</div>\n\n<!-- Energy -->\n<div style=\"margin:6px 0; display:flex; align-items:left;\">\n<span style=\"display:inline-block; width:90px;\">Energy: </span>\n<div style=\"display:inline-block; width:70%; height:16px; position:relative; background:linear-gradient(to right, #cc3333 0%, #e65c00 16%, #ff8800 33%, #ccaa00 50%, #99cc00 66%, #66cc33 83%, #33cc66 100%); border-radius:8px; overflow:hidden; vertical-align:middle;\">\n<div style=\"position:absolute; right:0; top:0; bottom:0; width:calc(100% - $3%); background:#333; border-radius:0 8px 8px 0; border-left:1px solid #333;\"></div>\n</div>\n<span style=\"color:#fff; font-size:12px; margin-left:8px; min-width:30px;\">$3%</span>\n</div>\n\n<!-- Hygiene -->\n<div style=\"margin:6px 0; display:flex; align-items:left;\">\n<span style=\"display:inline-block; width:90px;\">Hygiene: </span>\n<div style=\"display:inline-block; width:70%; height:16px; position:relative; background:linear-gradient(to right, #cc3333 0%, #e65c00 16%, #ff8800 33%, #ccaa00 50%, #99cc00 66%, #66cc33 83%, #33cc66 100%); border-radius:8px; overflow:hidden; vertical-align:middle;\">\n<div style=\"position:absolute; right:0; top:0; bottom:0; width:calc(100% - $4%); background:#333; border-radius:0 8px 8px 0;\"></div>\n</div>\n<span style=\"color:#fff; font-size:12px; margin-left:8px; min-width:30px;\">$4%</span>\n</div>\n\n<!-- Arousal -->\n<div style=\"margin:6px 0; display:flex; align-items:left;\">\n<span style=\"display:inline-block; width:90px;\">Arousal: </span>\n<div style=\"display:inline-block; width:70%; height:16px; position:relative; background:linear-gradient(to right, #cc3333 0%, #e65c00 16%, #ff8800 33%, #ccaa00 50%, #99cc00 66%, #66cc33 83%, #33cc66 100%); border-radius:8px; overflow:hidden; vertical-align:middle;\">\n<div style=\"position:absolute; right:0; top:0; bottom:0; width:calc(100% - $5%); background:#333; border-radius:0 8px 8px 0;\"></div>\n</div>\n<span style=\"color:#fff; font-size:12px; margin-left:8px; min-width:30px;\">$5%</span>\n</div>\n\n<!-- Mood + Conditions -->\n<div style=\"margin-top:10px; text-align:left; font-size:14px;\">\n💎: $6\n</div>\n</div>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "dc86f276-46df-4b73-be63-3b361e593208",
+        "scriptName": "Format Info Box (Only Output)",
+        "findRegex": "```\\nInfo Box\\n---\\n📅: ([\\s\\S]*?)[=?\\n]🕒: ([\\s\\S]*?)[=?\\n]🗺️: ([\\s\\S]*?)[=?\\n]📖: ([\\s\\S]*?)[=?\\n]👤: ([\\s\\S]*?)[=?\\n]```\\n?",
+        "replaceString": "<div style=\"width:100%; border:2px solid #444; border-radius:10px; padding:10px; font-family:Arial, sans-serif; box-sizing:border-box; background:transparent;\">\n<div style=\"font-weight:bold; font-size:18px; margin-bottom:8px; text-align:center;\">\nInfo Box\n</div>\n<div style=\"width:100%; height:2px; background:linear-gradient(to right, transparent, #444, transparent); margin:8px 0;\"></div>\n<div style=\"margin:6px 0;\">\n📅: $1\n</div>\n<div style=\"margin:6px 0;\">\n🕒: $2\n</div>\n<div style=\"margin:6px 0;\">\n🗺️: $3\n</div>\n<div style=\"margin:6px 0;\">\n📖: $4\n</div>\n<div style=\"margin:6px 0;\">\n👤: $5\n</div>\n</div>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "d3768b73-ef03-4004-8a59-5542bf252dc6",
+        "scriptName": "Format Character's Thoughts (Only Display)",
+        "findRegex": "```\\n([\\s\\S]*?)[?=\\n]---\\n💭: ([\\s\\S]*?)[?=\\n]```\\n?",
+        "replaceString": "<div style=\"width:100%; border:2px solid #444; border-radius:10px; padding:10px; font-family:Arial, sans-serif; box-sizing:border-box; background:transparent;\">\n<div style=\"font-weight:bold; font-size:18px; margin-bottom:8px; text-align:center;\">\n$1\n</div>\n<div style=\"width:100%; height:2px; background:linear-gradient(to right, transparent, #444, transparent); margin:8px 0;\"></div>\n<div style=\"margin:6px 0;\">\n💭: $2\n</div>\n</div>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
         "promptOnly": false,
         "runOnEdit": true,
         "substituteRegex": 0,
