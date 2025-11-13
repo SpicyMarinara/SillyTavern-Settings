@@ -13,6 +13,10 @@ jobs:
         with:
           fetch-depth: 0
           lfs: true
+      - name: Remove zip file before push
+        run: |
+          git rm --cached "Marinara's Essentials.zip" || true
+          git commit -m "Remove zip for HuggingFace" || true
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
