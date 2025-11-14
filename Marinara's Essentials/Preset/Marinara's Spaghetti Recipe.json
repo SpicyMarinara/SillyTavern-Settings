@@ -941,7 +941,7 @@
             "marker": false,
             "name": "➀ Flexible",
             "role": "system",
-            "content": "{{setvar::length::Keep the response length flexible, depending on the current scene. For instance, reply concisely with one/few sentences during action or dialogue involving the protagonist, allowing them to respond or react; however, expand with paragraphs during plot progression or scenery transitions}}{{trim}}",
+            "content": "{{setvar::length::flexible, depending on the current scene. For instance, reply concisely with one/few sentences during action or dialogue involving the protagonist, allowing them to respond or react; however, expand with paragraphs during plot progression or scenery transitions}}{{trim}}",
             "injection_position": 0,
             "injection_depth": 4,
             "injection_order": 100,
