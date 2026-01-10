@@ -1,8 +1,8 @@
 [
     {
-        "id": "a17c99e9-bf03-4a43-9663-c228d1bab72b",
+        "id": "e2b9f676-c150-4ce7-8ad3-78066891e55a",
         "scriptName": "Clean HTML (From Outgoing Prompt)",
-        "findRegex": "/\\s?<(?!\\!--)(?:\"[^\"]*\"|'[^']*'|[^'\">])*>/g",
+        "findRegex": "/[ \\t]?<(?!\\!--)(?!\\/?(?:font|lie)\\b)(?:\"[^\"]*\"|'[^']*'|[^'\">])*>/g",
         "replaceString": "",
         "trimStrings": [],
         "placement": [
@@ -17,7 +17,7 @@
         "maxDepth": null
     },
     {
-        "id": "680a76e1-2312-4143-b61f-b74a806d3cfd",
+        "id": "0c10486a-9a89-41ac-a428-381c827b662a",
         "scriptName": "Clean Optional Stuff (Keeping Last)",
         "findRegex": "/```\\n[\\s\\S]*?\\n---\\n[\\s\\S]*?```\\n+/g",
         "replaceString": "",
@@ -35,7 +35,7 @@
         "maxDepth": null
     },
     {
-        "id": "f20dde0c-c099-4ea1-bef9-8a16c04f7f98",
+        "id": "cdeeabb1-e816-4734-a192-ba3b5d3872da",
         "scriptName": "Fix Elipsis",
         "findRegex": "/\\.{3}/g",
         "replaceString": "…",
@@ -56,7 +56,7 @@
         "maxDepth": null
     },
     {
-        "id": "d1251733-4959-4304-970c-395754685b25",
+        "id": "a897c010-edbb-432e-a412-bd93dce36489",
         "scriptName": "Fix Apostrophes",
         "findRegex": "/[‘’]/g",
         "replaceString": "'",
@@ -77,7 +77,7 @@
         "maxDepth": null
     },
     {
-        "id": "9e3f51a7-3c46-4b77-8cb4-b57d95ae5bf1",
+        "id": "e479c4de-59f2-4732-ba3e-04bb1eca3549",
         "scriptName": "Fix Double Quotations",
         "findRegex": "/[“”]/g",
         "replaceString": "\"",
@@ -98,7 +98,7 @@
         "maxDepth": null
     },
     {
-        "id": "1e4f3c52-8c8c-48f6-b79e-06450e555e85",
+        "id": "830ebcae-5746-4751-ac27-4fdda01eface",
         "scriptName": "Replace Em-Dashes",
         "findRegex": "/(?<![\"'\"\"''“”‘’]\\s*)(?<!^\\s*)—(?=[a-zA-Z])(?![\"'\"\"''“”‘’])/gm",
         "replaceString": ", ",
@@ -119,7 +119,7 @@
         "maxDepth": null
     },
     {
-        "id": "173953a9-31c3-4295-9712-87e22090ebf7",
+        "id": "4d72a416-2dba-4e1d-9ea4-f0142f5e8c2d",
         "scriptName": "Remove Extra New Lines",
         "findRegex": "/\\n{2,}/g",
         "replaceString": "\n\n",
@@ -140,7 +140,7 @@
         "maxDepth": null
     },
     {
-        "id": "24596572-10fe-46b3-8c5c-a8520551f0b6",
+        "id": "54547cd4-1c2b-4a2e-8869-cb51a5b8d1e2",
         "scriptName": "Remove Extra Spaces",
         "findRegex": "/ {2,}/g",
         "replaceString": " ",
@@ -161,7 +161,7 @@
         "maxDepth": null
     },
     {
-        "id": "83d27b4a-ece5-48df-ae55-3d1d3c2dde41",
+        "id": "9ed52c7b-caef-4365-b85f-99592bbb5365",
         "scriptName": "Format User's Stats (Only Output)",
         "findRegex": "```\\n[\\s\\S]*?[?=Stats]\\n---\\n- Health: ([\\d]+)%\\n- Sustenance: ([\\d]+)%\\n- Energy: ([\\d]+)%\\n- Hygiene: ([\\d]+)%\\n- Arousal: ([\\d]+)%\\n💎: ([\\s\\S]*?)[?=\\n]```\\n?",
         "replaceString": "<div style=\"width:100%; border:2px solid #444; border-radius:10px; padding:10px; font-family:Arial, sans-serif; box-sizing:border-box; background:transparent;\">\n<div style=\"font-weight:bold; font-size:18px; margin-bottom:8px; text-align:center;\">\n{{user}}'s Stats\n</div>\n<div style=\"width:100%; height:2px; background:linear-gradient(to right, transparent, #444, transparent); margin:8px 0;\"></div>\n\n<!-- Health -->\n<div style=\"margin:6px 0; display:flex; align-items:left;\">\n<span style=\"display:inline-block; width:90px;\">Health: </span>\n<div style=\"display:inline-block; width:70%; height:16px; position:relative; background:linear-gradient(to right, #cc3333 0%, #e65c00 16%, #ff8800 33%, #ccaa00 50%, #99cc00 66%, #66cc33 83%, #33cc66 100%); border-radius:8px; overflow:hidden; vertical-align:middle;\">\n<div style=\"position:absolute; right:0; top:0; bottom:0; width:calc(100% - $1%); background:#333; border-radius:0 8px 8px 0; border-left:1px solid #333;\"></div>\n</div>\n<span style=\"color:#fff; font-size:12px; margin-left:8px; min-width:30px;\">$1%</span>\n</div>\n\n<!-- Sustenance -->\n<div style=\"margin:6px 0; display:flex; align-items:left;\">\n<span style=\"display:inline-block; width:90px;\">Sustenance: </span>\n<div style=\"display:inline-block; width:70%; height:16px; position:relative; background:linear-gradient(to right, #cc3333 0%, #e65c00 16%, #ff8800 33%, #ccaa00 50%, #99cc00 66%, #66cc33 83%, #33cc66 100%); border-radius:8px; overflow:hidden; vertical-align:middle;\">\n<div style=\"position:absolute; right:0; top:0; bottom:0; width:calc(100% - $2%); background:#333; border-radius:0 8px 8px 0; border-left:1px solid #333;\"></div>\n</div>\n<span style=\"color:#fff; font-size:12px; margin-left:8px; min-width:30px;\">$2%</span>\n</div>\n\n<!-- Energy -->\n<div style=\"margin:6px 0; display:flex; align-items:left;\">\n<span style=\"display:inline-block; width:90px;\">Energy: </span>\n<div style=\"display:inline-block; width:70%; height:16px; position:relative; background:linear-gradient(to right, #cc3333 0%, #e65c00 16%, #ff8800 33%, #ccaa00 50%, #99cc00 66%, #66cc33 83%, #33cc66 100%); border-radius:8px; overflow:hidden; vertical-align:middle;\">\n<div style=\"position:absolute; right:0; top:0; bottom:0; width:calc(100% - $3%); background:#333; border-radius:0 8px 8px 0; border-left:1px solid #333;\"></div>\n</div>\n<span style=\"color:#fff; font-size:12px; margin-left:8px; min-width:30px;\">$3%</span>\n</div>\n\n<!-- Hygiene -->\n<div style=\"margin:6px 0; display:flex; align-items:left;\">\n<span style=\"display:inline-block; width:90px;\">Hygiene: </span>\n<div style=\"display:inline-block; width:70%; height:16px; position:relative; background:linear-gradient(to right, #cc3333 0%, #e65c00 16%, #ff8800 33%, #ccaa00 50%, #99cc00 66%, #66cc33 83%, #33cc66 100%); border-radius:8px; overflow:hidden; vertical-align:middle;\">\n<div style=\"position:absolute; right:0; top:0; bottom:0; width:calc(100% - $4%); background:#333; border-radius:0 8px 8px 0;\"></div>\n</div>\n<span style=\"color:#fff; font-size:12px; margin-left:8px; min-width:30px;\">$4%</span>\n</div>\n\n<!-- Arousal -->\n<div style=\"margin:6px 0; display:flex; align-items:left;\">\n<span style=\"display:inline-block; width:90px;\">Arousal: </span>\n<div style=\"display:inline-block; width:70%; height:16px; position:relative; background:linear-gradient(to right, #cc3333 0%, #e65c00 16%, #ff8800 33%, #ccaa00 50%, #99cc00 66%, #66cc33 83%, #33cc66 100%); border-radius:8px; overflow:hidden; vertical-align:middle;\">\n<div style=\"position:absolute; right:0; top:0; bottom:0; width:calc(100% - $5%); background:#333; border-radius:0 8px 8px 0;\"></div>\n</div>\n<span style=\"color:#fff; font-size:12px; margin-left:8px; min-width:30px;\">$5%</span>\n</div>\n\n<!-- Mood + Conditions -->\n<div style=\"margin-top:10px; text-align:left; font-size:14px;\">\n💎: $6\n</div>\n</div>",
@@ -178,7 +178,7 @@
         "maxDepth": null
     },
     {
-        "id": "dc86f276-46df-4b73-be63-3b361e593208",
+        "id": "7edb0794-855a-49fb-8135-b9f481b95486",
         "scriptName": "Format Info Box (Only Output)",
         "findRegex": "```\\nInfo Box\\n---\\n📅: ([\\s\\S]*?)[=?\\n]🕒: ([\\s\\S]*?)[=?\\n]🗺️: ([\\s\\S]*?)[=?\\n]📖: ([\\s\\S]*?)[=?\\n]👤: ([\\s\\S]*?)[=?\\n]```\\n?",
         "replaceString": "<div style=\"width:100%; border:2px solid #444; border-radius:10px; padding:10px; font-family:Arial, sans-serif; box-sizing:border-box; background:transparent;\">\n<div style=\"font-weight:bold; font-size:18px; margin-bottom:8px; text-align:center;\">\nInfo Box\n</div>\n<div style=\"width:100%; height:2px; background:linear-gradient(to right, transparent, #444, transparent); margin:8px 0;\"></div>\n<div style=\"margin:6px 0;\">\n📅: $1\n</div>\n<div style=\"margin:6px 0;\">\n🕒: $2\n</div>\n<div style=\"margin:6px 0;\">\n🗺️: $3\n</div>\n<div style=\"margin:6px 0;\">\n📖: $4\n</div>\n<div style=\"margin:6px 0;\">\n👤: $5\n</div>\n</div>",
@@ -195,7 +195,7 @@
         "maxDepth": null
     },
     {
-        "id": "d3768b73-ef03-4004-8a59-5542bf252dc6",
+        "id": "5ce3a7a9-a798-4a99-b767-4fcab2fa26b9",
         "scriptName": "Format Character's Thoughts (Only Display)",
         "findRegex": "```\\n([\\s\\S]*?)[?=\\n]---\\n💭: ([\\s\\S]*?)[?=\\n]```\\n?",
         "replaceString": "<div style=\"width:100%; border:2px solid #444; border-radius:10px; padding:10px; font-family:Arial, sans-serif; box-sizing:border-box; background:transparent;\">\n<div style=\"font-weight:bold; font-size:18px; margin-bottom:8px; text-align:center;\">\n$1\n</div>\n<div style=\"width:100%; height:2px; background:linear-gradient(to right, transparent, #444, transparent); margin:8px 0;\"></div>\n<div style=\"margin:6px 0;\">\n💭: $2\n</div>\n</div>",
@@ -206,6 +206,40 @@
         "disabled": false,
         "markdownOnly": true,
         "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "beae8f84-4421-49ff-92da-6203a1315862",
+        "scriptName": "Clean RPG Trackers (From Outgoing Prompt)",
+        "findRegex": "/```json\\s*\\n\\{[\\s\\S]*?(?:\"userStats\"|\"infoBox\"|\"characters\")[\\s\\S]*?\\}\\s*\\n```/gm",
+        "replaceString": "",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": false,
+        "promptOnly": true,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "aa7b5596-32ad-467d-a91e-ab1df069cac7",
+        "scriptName": "RPG Companion - Remove Tracker JSON (Together Mode)",
+        "findRegex": "/```(?:json|markdown)?[\\s\\S]*?```/gim",
+        "replaceString": "",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": true,
         "runOnEdit": true,
         "substituteRegex": 0,
         "minDepth": null,
