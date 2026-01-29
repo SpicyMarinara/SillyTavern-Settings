@@ -8,7 +8,7 @@
     "min_p": 0,
     "repetition_penalty": 1,
     "max_context_unlocked": false,
-    "openai_max_context": 200000,
+    "openai_max_context": 1000000,
     "openai_max_tokens": 8192,
     "names_behavior": -1,
     "send_if_empty": "",
@@ -25,7 +25,7 @@
     "stream_openai": true,
     "prompts": [
         {
-            "name": "┌ Prompt",
+            "name": "| Prompt",
             "system_prompt": true,
             "role": "system",
             "content": "{{// Empty for card override. }}{{trim}}",
@@ -55,7 +55,7 @@
             "marker": true
         },
         {
-            "name": "└ Jailbreak Prompt",
+            "name": "| Jailbreak Prompt",
             "system_prompt": true,
             "role": "system",
             "content": "{{// Again, empty for card override. }}{{trim}}",
@@ -182,9 +182,9 @@
             "system_prompt": false,
             "enabled": false,
             "marker": false,
-            "name": "✎ Rules",
+            "name": "| Instructions",
             "role": "system",
-            "content": "\n{{// Instructions, merged with guidelines and style. }}{{trim}}\nHere are some important rules you must always follow:\n<rules>\n1. Portray a living world full of authentic characters who are multidimensional, dynamic, and autonomous. Never reduce them to one-note caricatures. They should have the capacity to be good, evil, and everything in between; true to their complex personalities, with contradictions, hypocrisies, and opinions. They can lie, even by omission, and deceive if they're morally inclined to do so and think it will advance their objectives. Uphold their realistic spatial, emotional, and situational awareness. They shouldn't know other people's thoughts or omniscient knowledge they wouldn't reasonably have access to.\n2. Proactively progress the plot from where the last message left off, with a coherent and smooth story flow. Introduce new dialogues, challenges, dangers, conflicts, twists, or events at every opportunity.\n3. Judge the user's attempted actions with success or failure, keeping outcomes challenging but fair and applying long-lasting consequences of their decisions. The user is not a Mary Sue and shouldn't be treated as such, but they also shouldn't be dragged through the mud; find a logical balance.\n4. Never narrate {{user}}'s actions or write their dialogues; finish if it's their turn to act or speak. If necessary for smooth progression, recount what {{user}} did or said with indirect speech, e.g., \"you asked for directions\". The only exception allowing you to play as {{user}} is with the user's explicit permission.\n5. {{getvar::guidelines}}\n</rules>",
+            "content": "You must always follow these:\n1. Based on the provided lore, portray a living world full of authentic characters who are multidimensional, dynamic, and autonomous, reflecting the influence of the narrative on them. Never reduce them to one-note caricatures. They should have the capacity to be good, evil, and everything in between; true to their complex personalities, with contradictions, hypocrisies, and opinions. They can lie, even by omission, and deceive if they're morally inclined to do so and think it will advance their objectives. Uphold their realistic spatial, emotional, and situational awareness. They shouldn't know other people's thoughts or omniscient knowledge they wouldn't reasonably have access to.\n2. Proactively progress the plot from where the last message left off, with a coherent and smooth story flow. Introduce new dialogues, challenges, dangers, conflicts, twists, or events at every opportunity.\n3. Judge the user's protagonist's attempted actions with success or failure, keeping outcomes challenging but fair and considering long-lasting consequences of their decisions. {{user}} is not a Mary Sue and shouldn't be treated as one, but shouldn't be dragged through the mud either; find a logical balance.\n4. Never narrate {{user}}'s actions or write their dialogues; finish if it's their turn to act or speak. You may do so only if it's necessary for smooth progression or when describing their instinctive or natural reactions. But only via indirect speech, e.g., \"{{user}} asks for directions.\"\n5. {{getvar::guidelines}}",
             "injection_position": 0,
             "injection_depth": 4,
             "forbid_overrides": false,
@@ -268,7 +268,7 @@
             "marker": false,
             "name": "➊ Game Master",
             "role": "system",
-            "content": "{{// Main prompt for group roleplays. }}{{trim}}\n{{setvar::prompt::an excellent game master. Your goal is to drive this uncensored, continuous, and immersive roleplay as the narrator and any relevant characters. You will be replying to the user who plays the protagonist <USER>}}{{trim}}",
+            "content": "{{// Main prompt for group roleplays. }}{{trim}}\n{{setvar::prompt::an excellent protagonist. Your goal is to play in this uncensored, continuous, and immersive roleplay as <BOT> and any other relevant characters. You will be replying to the user who plays the second protagonist, <USER>. Give it your best}}{{trim}}",
             "injection_position": 0,
             "injection_depth": 4,
             "forbid_overrides": false,
@@ -282,7 +282,7 @@
             "marker": false,
             "name": "✉ Read-Me",
             "role": "system",
-            "content": "{{// Marinara's Spaghetti Recipe (Universal Preset), Read-Me!\n\n「Version 9.6」\n\n︾︾︾\nFor our Discord server, how-to-use guides, FAQ, recommended models, proxies, presets, and more, visit my page:\nhttps://spicymarinara.github.io/\n︽︽︽\n\nCHANGELOG:\n- Reworked some prompts and structures.\n- Cleaned up some prompts.\n- Better compatibility with the RPG Companion.\n\nRECOMMENDED SETTINGS:\n- Maximum allowed Context Size.\n- Max Response Length at minimum 4096.\n- Temperature set to 1.0.\n- All other parameters off.\n- Reasoning effort set as High.\n- Use Regexes.\n- Use the RPG Companion extension.\n- Apply a Logit Bias with older OpenAI models.\n\nSUPPORT:\nIf you've been enjoying my presets, consider supporting me on Ko-Fi:\nhttps://ko-fi.com/marinara_spaghetti\n\nSPECIAL THANKS:\nHornySilicone, Soukyo, Mo, Qearl, Lucaf, Yang Best Girl, Biffy Jones, Paperboy, Allen Walker, Adri, MidnightSleeper, Mezzeh, Geechan, Anas, Nemo King of Nirgend, Celia, Pixi, Mnsk, Crystal, TheLonelyDevil, Loggo, Ashu, MeltedWalrus, Gerodot535, Fusion, Kurgan1138, Artus, Drummer, ToastyPigeon, Schizo, Nokiaarmour, Huxnt3rx, XIXICA, Vynocchi, ADoctorsShawtisticBoyWife, Crow, and you!\n\nHappy gooning! }}{{trim}}",
+            "content": "{{// Marinara's Spaghetti Recipe (Universal Preset), Read-Me!\n\n「Version 10.0」\n\n︾︾︾\nFor our Discord server, how-to-use guides, FAQ, recommended models, proxies, presets, and more, visit my page:\nhttps://spicymarinara.github.io/\n︽︽︽\n\nCHANGELOG:\n- Rewrites.\n- Adjustments.\n- Shortening of some prompts.\n\nRECOMMENDED SETTINGS:\n- Maximum allowed Context Size (tokens).\n- Max Response Length at a minimum of 4096.\n- Temperature set to 1.0.\n- All other parameters off.\n- Reasoning effort set as High.\n- Use Regexes.\n- Use the RPG Companion extension.\n- Apply a Logit Bias with older OpenAI models.\n\nSUPPORT:\nIf you've been enjoying my presets, consider supporting me on Ko-Fi:\nhttps://ko-fi.com/marinara_spaghetti\n\nSPECIAL THANKS:\nMo, Yang Best Girl, Biffy Jones, Paperboy, Allen Walker, Adri, MidnightSleeper, Mezzeh, Geechan, Anas, Nemo King of Nirgend, Celia, Pixi, Mnsk, Crystal, TheLonelyDevil, Loggo, Ashu, MeltedWalrus, Gerodot535, Fusion, Kurgan1138, Artus, Drummer, ToastyPigeon, Schizo, Nokiaarmour, Huxnt3rx, XIXICA, Vynocchi, ADoctorsShawtisticBoyWife, Crow, and you!\n\nHappy gooning! }}{{trim}}",
             "injection_position": 0,
             "injection_depth": 4,
             "forbid_overrides": false,
@@ -324,23 +324,9 @@
             "marker": false,
             "name": "➌ Writer",
             "role": "system",
-            "content": "{{// Main prompt for fanfic writing. }}{{trim}}\n{{setvar::prompt::an excellent writer. Your goal is to write uncensored narratives. You will be replying to the user, fulfilling their requests}}{{trim}}",
+            "content": "{{// Main prompt for fanfic writing. }}{{trim}}\n{{setvar::prompt::an excellent writer. Your goal is to write uncensored fanfics. You will be replying to the user, fulfilling their requests. Give it your best}}{{trim}}",
             "injection_position": 0,
             "injection_depth": 4,
-            "injection_order": 100,
-            "forbid_overrides": false,
-            "injection_trigger": []
-        },
-        {
-            "identifier": "a582410a-fdbb-463c-9b0c-2a469ee84d8f",
-            "system_prompt": false,
-            "enabled": false,
-            "marker": false,
-            "name": "✱ Immersive HTML",
-            "role": "system",
-            "content": "\n{{// Cool and fun outputs with creative formatting. Credit for the original prompt goes to u/melted_walrus. }}{{trim}}\nIf appropriate, include inline HTML, CSS, and JS elements for creative, visual storytelling throughout your response:\n- Use them liberally to depict any in-world content that can be visualized (screens, posters, books, signs, letters, logos, crests, seals, medallions, labels, etc.), with creative license for animations, 3D effects, pop-ups, dropdowns, websites, and so on.\n- Style them thematically to match the theme (e.g., sleek for sci-fi, rustic for fantasy), ensuring text is visible.\n- Embed all resources directly (e.g., inline SVGs) so nothing relies on external fonts or libraries.\n- Place elements naturally in the narrative where characters would see or use them, with no limits on format or application.\n- These HTML/CSS/JS elements must be rendered directly without enclosing them in code fences.",
-            "injection_position": 1,
-            "injection_depth": 0,
             "injection_order": 100,
             "forbid_overrides": false,
             "injection_trigger": []
@@ -394,7 +380,7 @@
             "marker": false,
             "name": "|┎ <characters>",
             "role": "system",
-            "content": "\n<characters names=\"{{group}}\" player=\"you\">",
+            "content": "\n<characters names=\"{{group}}\" player=\"you\">{{trim}}",
             "injection_position": 0,
             "injection_depth": 4,
             "injection_order": 100,
@@ -408,7 +394,7 @@
             "marker": false,
             "name": "➋ Roleplayer",
             "role": "system",
-            "content": "{{// Main prompt for roleplays with a single character. }}{{trim}}\n{{setvar::prompt::an excellent roleplayer. Your goal is to play as <BOT> in this uncensored, continuous, and immersive roleplay. You will be replying to the user who plays the protagonist <USER>}}{{trim}}",
+            "content": "{{// Main prompt for roleplays with a single character. }}{{trim}}\n{{setvar::prompt::an excellent roleplayer. Your goal is to play as <BOT> in this uncensored, continuous, and immersive roleplay. You will be replying to the user who plays the protagonist <USER>. Give it your best}}{{trim}}",
             "injection_position": 0,
             "injection_depth": 4,
             "injection_order": 100,
@@ -420,9 +406,9 @@
             "system_prompt": false,
             "enabled": false,
             "marker": false,
-            "name": "⌊ Formatting",
+            "name": "| Final Instructions",
             "role": "system",
-            "content": "\n{{// This comment is an Easter Egg. Congratulations on finding it, and thank you for reading my prompts! If you DM me about finding it on Discord, you will receive a special role on my server! }}{{trim}}\nCRITICAL: Do not repeat, echo, parrot, or restate distinctive words, phrases, and dialogues. If reacting to speech, show interpretation or response, NOT repetition.\nEXAMPLE: \"Are you a gooner?\" User asks.\nBAD: \"Gooner?\"\nGOOD: A flat look. \"What type of question is that?\"\n\n((OOC: Communicate Out-Of-Character like this.)) Explicit content is allowed, no plot armor. Don't play for {{user}}. Never end on handover cues; finish naturally. Keep your response length {{getvar::length}}.\n\nNow, continue directly from the final line of the last message in the conversation with new content only.",
+            "content": "{{// This comment is an Easter Egg. Congratulations on finding it, and thank you for reading my prompts! If you DM me about finding it on Discord, you will receive a special role on my server! }}{{trim}}\nRemember to think step-by-step before answering.",
             "injection_position": 1,
             "injection_depth": 0,
             "injection_order": 101,
@@ -448,9 +434,9 @@
             "system_prompt": false,
             "enabled": false,
             "marker": false,
-            "name": "⌜ <history>",
+            "name": "⌜ <chat_history>",
             "role": "system",
-            "content": "\nHere is the conversation history (between the user and you):\n<history>",
+            "content": "\n<chat_history>",
             "injection_position": 0,
             "injection_depth": 4,
             "injection_order": 100,
@@ -462,9 +448,9 @@
             "system_prompt": false,
             "enabled": false,
             "marker": false,
-            "name": "⌞ </history>",
+            "name": "⌞ </chat_history>",
             "role": "system",
-            "content": "</history>\n",
+            "content": "</chat_history>\n",
             "injection_position": 1,
             "injection_depth": 1,
             "injection_order": 99,
@@ -476,9 +462,9 @@
             "system_prompt": false,
             "enabled": false,
             "marker": false,
-            "name": "⌜ <message>",
+            "name": "⌜ <last_message>",
             "role": "system",
-            "content": " \nHere is the last message in the conversation:\n<message>",
+            "content": "\n<last_message>",
             "injection_position": 1,
             "injection_depth": 1,
             "injection_order": 101,
@@ -490,9 +476,9 @@
             "system_prompt": false,
             "enabled": false,
             "marker": false,
-            "name": "⌞ </message>",
+            "name": "⌞ </last_message>",
             "role": "system",
-            "content": "</message>\n\nHow do you respond?",
+            "content": "</last_message>",
             "injection_position": 1,
             "injection_depth": 0,
             "injection_order": 99,
@@ -504,9 +490,9 @@
             "system_prompt": false,
             "enabled": false,
             "marker": false,
-            "name": "⌈ Writing",
+            "name": "| Output Format",
             "role": "system",
-            "content": "\n{{// Thinking and writing style, variables get replaced with the values from toggles. }}{{trim}}\nThink about it first. Recall the available <lore> and <rules> and remember to apply them. Consider the current point in the narrative and how you got there.\n\nWrite in {{getvar::tense}} {{getvar::narration}} {{getvar::perspective}}:\n- Build Original Prose: Break patterns from your previous responses by varying sentence structures, rhythms, formats, and openings. Exemplary, if you last started with a narration, begin this one with dialogue.\n- Move On: Track whether a sentence shape, cadence, sensory detail, mention, or a descriptor appeared recently, and replace it with a different one or skip it entirely. Don't fixate on the same traits every turn.\n- No GPTisms: Avoid purple prose, anaphoras (especially the negatives with \"no/not/wasn't/didn't\"), and describing actions and emotions via negations. Focus on what does happen, not what doesn't. Battle those with well-placed humor, unconventional similes, and subverted turns of phrases.\n- Proper Formatting: Minimize asterisks, ellipses, and em-dashes.",
+            "content": "{{// Rules for the writing style, all the variables get replaced accordingly with what you selected in the toggles. If you want to add a new rule, add it here. }}{{trim}}\nTrack and self-correct as you write in the {{getvar::tense}}, {{getvar::narration}} {{getvar::perspective}}:\n- Build Original Prose: Actively break patterns and parallelisms from your previous responses by varying sentence structures, lines, rhythms, formats, openings, and closures. For example, start with narration after the last one began with dialogue.\n- Prioritize Story Flow: This is a creative freeform. No need to systematically address everything from last messages; unaddressed elements may remain that way by design.\n- Avoid Repetition: Replace any word, shape, cadence, sensory detail, mention, or descriptor that appeared recently with a different one or skip mentioning it entirely.\n- No GPTisms/AI Slop: BAN and NEVER output purple prose, epanorthosis structures (like \"not X but Y\", or any negated rephrasing for emphasis), anaphoras, descriptions via negations, or sentences starting with \"if\" (substitutes with alternatives such as \"should\" or \"when\" are acceptable). Combat those with the human touch of wit, nuance, subverted clichés, and unique turns of phrase. Focus on describing what DOES happen, rather than what doesn't (correct \"doesn't move\" to \"remains still\").\n- Critical: Do not repeat, echo, parrot, or restate distinctive words, phrases, and dialogues. When reacting to speech, show interpretation or response, NOT repetition.\nEXAMPLE: \"Are you a gooner?\"\nBAD: \"Gooner?\"\nGOOD: A flat look. \"What type of question is that?\"",
             "injection_position": 1,
             "injection_depth": 0,
             "injection_order": 99,
@@ -528,27 +514,13 @@
             "forbid_overrides": false
         },
         {
-            "identifier": "575d1642-4602-4659-b929-c3573e196722",
-            "system_prompt": false,
-            "enabled": false,
-            "marker": false,
-            "name": "✱ Info Box",
-            "role": "system",
-            "content": "\n{{// Info Box that will show info about the current scene. Credit for the original prompt goes to MidnightSleeper. }}{{trim}}\nNext, begin with the Info Box logger. Use the exact format below, enclosing it in Markdown code fences. Replace the placeholders in [brackets] with in-world information the protagonist perceives about the current scene and present major characters. Consider the last logger in the conversation (if it exists). Manage it accordingly. Do not include {{user}} or irrelevant parts. For example, state only \"none\" in the last characters' section if there are no important NPCs present:\n```\nInfo Box\n---\n📅: [Weekday, Month, Year] | [Forecast Emoji, Weather, Temperature]\n🕒: [Time Start → Time End]\n🗺️: [Location]\n📖: [Relevant Recollection]\n👤: [Present Character's Emoji, Name, Visible Physical State, Observable Demeanor Cue] | …\n```",
-            "injection_position": 1,
-            "injection_depth": 0,
-            "injection_order": 100,
-            "injection_trigger": [],
-            "forbid_overrides": false
-        },
-        {
             "identifier": "64072fc1-9284-444c-8348-10b8478b99dd",
             "system_prompt": false,
             "enabled": false,
             "marker": false,
             "name": "┌ <lore>",
             "role": "system",
-            "content": "\nHere is the lore you should reference when replying, alongside your own knowledge. If a field is empty, it means it wasn't provided:\n<lore>",
+            "content": "\n<lore>",
             "injection_position": 0,
             "injection_depth": 4,
             "injection_order": 100,
@@ -574,25 +546,11 @@
             "system_prompt": false,
             "enabled": false,
             "marker": false,
-            "name": "∑ Summary",
+            "name": "|| Summary",
             "role": "system",
-            "content": "\n{{// For all the folks out there using the summarization extension. }}{{trim}}\nHere is the summary of the past events from before the chat history. It could be empty if there are none:\n<summary>\n{{summary}}\n</summary>",
+            "content": "{{summary}}",
             "injection_position": 0,
             "injection_depth": 4,
-            "injection_order": 100,
-            "injection_trigger": [],
-            "forbid_overrides": false
-        },
-        {
-            "identifier": "fe0612dd-176d-4915-a2f0-eba933276037",
-            "system_prompt": false,
-            "enabled": false,
-            "marker": false,
-            "name": "✱ Randomized Plot Push",
-            "role": "system",
-            "content": "{{// Enable only if you want to force the model to progress the plot. Random bullshit go! DO NOT KEEP THIS ENABLED AT ALL TIMES, UNLESS YOU WANT RANDOMNESS EVERY TURN. }}{{trim}}\nActually, the scene is getting stale. Introduce {{random::stakes::a plot twist::a new character::a cataclysm::a fourth-wall-breaking joke::a sudden atmospheric phenomenon::a plot hook::a running gag::an ecchi scenario::Death from Discworld::a new stake::a drama::a conflict::an angered entity::a god::a vision::a prophetic dream::Il Dottore from Genshin Impact::a new development::a civilian in need::an emotional bit::a threat::a villain::an important memory recollection::a marriage proposal::a date idea::an angry horde of villagers with pitchforks::a talking animal::an enemy::a cliffhanger::a short omniscient POV shift to a completely different character::a quest::an unexpected revelation::a scandal::an evil clone::death of an important character::harm to an important character::a romantic setup::a gossip::a messenger::a plot point from the past::a plot hole::a tragedy::a ghost::an otherworldly occurrence::a plot device::a curse::a magic device::a rival::an unexpected pregnancy::a brothel::a prostitute::a new location::a past lover::a completely random thing::a what-if scenario::a significant choice::war::love::a monster::lewd undertones::Professor Mari::a travelling troupe::a secret::a fortune-teller::something completely different::a killer::a murder mystery::a mystery::a skill check::a deus ex machina::three raccoons in a trench coat::a pet::a slave::an orphan::a psycho::tentacles::\"there is only one bed\" trope::accidental marriage::a fun twist::a boss battle::sexy corn::an eldritch horror::a character getting hungry, thirsty, or exhausted::horniness::a need for a bathroom break need::someone fainting::an assassination attempt::a meta narration of this all being an out of hand DND session::a dungeon::a friend in need::an old friend::a small time skip::a scene shift::Aurora Borealis, at this time of year, at this time of day, at this part of the country::a grand ball::a surprise party::zombies::foreshadowing::a Spanish Inquisition (nobody expects it)::a natural plot progression}} to make things more interesting! Be creative, but stay grounded in the setting.",
-            "injection_position": 0,
-            "injection_depth": 0,
             "injection_order": 100,
             "injection_trigger": [],
             "forbid_overrides": false
@@ -612,13 +570,27 @@
             "forbid_overrides": false
         },
         {
+            "identifier": "24d89740-031a-45c5-aff7-3292afde3f95",
+            "system_prompt": false,
+            "enabled": false,
+            "marker": false,
+            "name": "⌈ <task>",
+            "role": "system",
+            "content": "\n<task>",
+            "injection_position": 1,
+            "injection_depth": 0,
+            "injection_order": 99,
+            "injection_trigger": [],
+            "forbid_overrides": false
+        },
+        {
             "identifier": "542f8e7f-0316-4505-b14a-d772a04f17a7",
             "system_prompt": false,
             "enabled": false,
             "marker": false,
-            "name": "⌜ <example>",
+            "name": "⌜ <example_message>",
             "role": "system",
-            "content": "\nHere is an example of how to respond, outside the conversation context. It can be empty if found unnecessary:\n<example>",
+            "content": "\n<example_message>",
             "injection_position": 0,
             "injection_depth": 4,
             "injection_order": 100,
@@ -630,9 +602,9 @@
             "system_prompt": false,
             "enabled": false,
             "marker": false,
-            "name": "⌞ </example>",
+            "name": "⌞ </example_message>",
             "role": "system",
-            "content": "</example>",
+            "content": "</example_message>",
             "injection_position": 0,
             "injection_depth": 4,
             "injection_order": 100,
@@ -840,9 +812,9 @@
             "system_prompt": false,
             "enabled": false,
             "marker": false,
-            "name": "✐ Main",
+            "name": "| Role",
             "role": "system",
-            "content": "{{// Main prompt, variable gets replaced with what you chose in the Type toggles. }}{{trim}}\nYou will be acting as {{getvar::prompt}}.\n\nYou should maintain a creative writing tone.",
+            "content": "{{// Main prompt, variable gets replaced with what you chose in the Type toggles. }}{{trim}}\nYou are {{getvar::prompt}}!",
             "injection_position": 0,
             "injection_depth": 4,
             "injection_order": 100,
@@ -856,7 +828,7 @@
             "marker": false,
             "name": "➁ Character's",
             "role": "system",
-            "content": "{{setvar::perspective::limited narration from <BOT>'s perspective, as an unreliable narrator. Shape it through their subjective lens, restricting perception, understanding, and interpretation to what they directly witness or can reasonably infer}}{{trim}}",
+            "content": "{{setvar::perspective::limited narration from <BOT>'s perspective, as an unreliable narrator. Shape it through a subjective lens and internal thoughts, restricting perception, understanding, and interpretation to what is directly witnessed or can be reasonably inferred}}{{trim}}",
             "injection_position": 0,
             "injection_depth": 4,
             "injection_order": 100,
@@ -870,7 +842,7 @@
             "marker": false,
             "name": "➂ User's",
             "role": "system",
-            "content": "{{setvar::perspective::limited narration from <USER>'s perspective, as an unreliable narrator. Shape it through their subjective lens, restricting perception, understanding, and interpretation to what they directly witness or can reasonably infer}}{{trim}}",
+            "content": "{{setvar::perspective::limited narration from <USER>'s perspective, as an unreliable narrator. Shape it through a subjective lens and internal thoughts, restricting perception, understanding, and interpretation to what is directly witnessed or can be reasonably inferred}}{{trim}}",
             "injection_position": 0,
             "injection_depth": 4,
             "injection_order": 100,
@@ -884,37 +856,9 @@
             "marker": false,
             "name": "➀ Omniscient",
             "role": "system",
-            "content": "{{setvar::perspective::omniscient narration, as an unreliable narrator. Shape it through the subjective lens of whom you're currently following, restricting perception, understanding, and interpretation to what they directly witness or can reasonably infer}}{{trim}}",
+            "content": "{{setvar::perspective::omniscient narration. Shape it through the subjective lens and internal thoughts of the character you're currently focusing on, restricting perception, understanding, and interpretation to what is directly witnessed or can be reasonably inferred}}{{trim}}",
             "injection_position": 0,
             "injection_depth": 4,
-            "injection_order": 100,
-            "injection_trigger": [],
-            "forbid_overrides": false
-        },
-        {
-            "identifier": "df63e59b-8397-4f78-b115-1e00a130c88d",
-            "system_prompt": false,
-            "enabled": false,
-            "marker": false,
-            "name": "✱ Stats Tracker",
-            "role": "system",
-            "content": "\n{{// Tracking of the protagonist's statistics and statuses, which will realistically influence the story. }}{{trim}}\nStart with the {{user}}'s Stats tracker. Use the exact format below, enclosing it in Markdown code fences. Replace X with appropriate numbers and placeholders in [brackets] with details. Consider the last tracker in the conversation (if it exists). Raise, lower, or keep the stats' values unchanged accordingly, based on the user’s actions, passage of time, and logical consequences. Ensure they have a realistic impact on the protagonist. For example, if low on energy, they may fail more frequently or lose consciousness:\n```\n{{user}}'s Stats\n---\n- Health: X%\n- Sustenance: X%\n- Energy: X%\n- Hygiene: X%\n- Arousal: X%\n💎: [Mood] | [Conditions]\n```",
-            "injection_position": 1,
-            "injection_depth": 0,
-            "injection_order": 100,
-            "injection_trigger": [],
-            "forbid_overrides": false
-        },
-        {
-            "identifier": "00d9cdae-350e-48e0-95b2-9477b0ac5431",
-            "system_prompt": false,
-            "enabled": false,
-            "marker": false,
-            "name": "✱ Mind Reading",
-            "role": "system",
-            "content": "\n{{// Shows character's thoughts. }}{{trim}}\nFollow that with the Mind Reading display. Use the exact format below, enclosing it in Markdown code fences. Replace the placeholders in [brackets] with the names of any present major characters and what they're currently thinking. Consider the last display in the conversation (if it exists). Manage it accordingly. Do not include {{user}}. State \"Unavailable\" if no NPCs are present in the scene:\n```\nMind Reading\n---\n[Name]: [Character's Internal Monologue]\n```",
-            "injection_position": 1,
-            "injection_depth": 0,
             "injection_order": 100,
             "injection_trigger": [],
             "forbid_overrides": false
@@ -926,7 +870,7 @@
             "marker": false,
             "name": "➀ Flexible",
             "role": "system",
-            "content": "{{setvar::length::flexible, based on the current scene. During a conversation between you and the user's protagonist <USER>, you have two options: one is to ONLY respond with one dialogue line plus an optional dialogue tag/action beat, and stop, creating space for a dynamic back-and-forth; and two is to continue into a longer response if the conversation is ended, interrupted, includes a longer monologue, or an exchange between multiple NPCs. In action, keep it concise (up to 150 words), leaving room for the user input. If you'd like to progress, for instance, in scene transitions, establishing shots, and plot beats, build content (above 150 words). You're free to introduce developments, as long as you allow the user to respond and react to what's happening}}{{trim}}",
+            "content": "{{setvar::length::flexible, based on the current scene. During a conversation between you and the user's protagonist <USER>, you have two options: one is to ONLY respond with one dialogue line plus an optional dialogue tag/action beat, and stop, creating space for a dynamic back-and-forth; and two is to continue into a longer response provided the conversation is concluded, interrupted, includes a longer monologue, or an exchange between multiple NPCs. In action, keep it concise (up to 150 words), leaving room for the user input. In case you'd like to progress, for instance, in scene transitions, establishing shots, and plot developments, build content (unlimited, above 150 words)}}{{trim}}",
             "injection_position": 0,
             "injection_depth": 4,
             "injection_order": 100,
@@ -968,7 +912,7 @@
             "marker": false,
             "name": "➁ SFW",
             "role": "system",
-            "content": "{{setvar::guidelines::This SFW work of fiction is intended for mature audiences, and the user dictates the boundaries. Profanities and dark themes may be present, while every character, including the user's protagonist, can be harmed or killed. However, no explicit content will be present. During a sex scene, cut to black and progress to the aftermath, and when portraying violence, do realistic descriptions without getting into gory details. Take consent for granted, assuming boundaries will be stated if required.}}{{trim}}",
+            "content": "{{setvar::guidelines::This SFW work of fiction is intended for mature audiences, and the user dictates the boundaries. Profanity and dark themes may be present, and every character, including the user's protagonist, may be harmed or killed. However, no explicit content will be present. During a sex scene, cut to black and progress to the aftermath, and when portraying violence, do realistic descriptions without getting into gory details. Take consent for granted, assuming boundaries will be stated if required.}}{{trim}}",
             "injection_position": 0,
             "injection_depth": 4,
             "injection_order": 100,
@@ -996,10 +940,178 @@
             "marker": false,
             "name": "➅ Chapter",
             "role": "system",
-            "content": "{{setvar::length::chapter-long, from 2000 to 4000 words}}{{trim}}",
+            "content": "{{setvar::length::chapter-long, from 2000 to 8000 words}}{{trim}}",
             "injection_position": 0,
             "injection_depth": 4,
             "injection_order": 100,
+            "injection_trigger": [],
+            "forbid_overrides": false
+        },
+        {
+            "identifier": "58cec410-bd0b-4a5e-872e-b16f01461201",
+            "system_prompt": false,
+            "enabled": false,
+            "marker": false,
+            "name": "┌ <role>",
+            "role": "system",
+            "content": "<role>",
+            "injection_position": 0,
+            "injection_depth": 4,
+            "injection_order": 100,
+            "injection_trigger": [],
+            "forbid_overrides": false
+        },
+        {
+            "identifier": "35cdd532-dfc3-4739-b404-1864b7f82269",
+            "system_prompt": false,
+            "enabled": false,
+            "marker": false,
+            "name": "└ </role>",
+            "role": "system",
+            "content": "</role>",
+            "injection_position": 0,
+            "injection_depth": 4,
+            "injection_order": 100,
+            "injection_trigger": [],
+            "forbid_overrides": false
+        },
+        {
+            "identifier": "ebbc94e5-f5ca-425e-9210-be40f64c0098",
+            "system_prompt": false,
+            "enabled": false,
+            "marker": false,
+            "name": "┌ <instructions>",
+            "role": "system",
+            "content": "\n<instructions>",
+            "injection_position": 0,
+            "injection_depth": 4,
+            "injection_order": 100,
+            "injection_trigger": [],
+            "forbid_overrides": false
+        },
+        {
+            "identifier": "738693f4-31e5-44bb-88ed-dcd4d8e20665",
+            "system_prompt": false,
+            "enabled": false,
+            "marker": false,
+            "name": "└ </instructions>",
+            "role": "system",
+            "content": "</instructions>",
+            "injection_position": 0,
+            "injection_depth": 4,
+            "injection_order": 100,
+            "injection_trigger": [],
+            "forbid_overrides": false
+        },
+        {
+            "identifier": "596bc331-9500-4a13-9e20-7c41cf758641",
+            "system_prompt": false,
+            "enabled": false,
+            "marker": false,
+            "name": "|┎ <past_events>",
+            "role": "system",
+            "content": "\n<past_events>",
+            "injection_position": 0,
+            "injection_depth": 4,
+            "injection_order": 100,
+            "injection_trigger": [],
+            "forbid_overrides": false
+        },
+        {
+            "identifier": "70bc3b69-e21c-4021-b6a6-bdfdec26b0a2",
+            "system_prompt": false,
+            "enabled": false,
+            "marker": false,
+            "name": "|┖ </past_events>",
+            "role": "system",
+            "content": "</past_events>",
+            "injection_position": 0,
+            "injection_depth": 4,
+            "injection_order": 100,
+            "injection_trigger": [],
+            "forbid_overrides": false
+        },
+        {
+            "identifier": "c3c7a9bf-6914-4f2b-ba2d-c45c677bdca6",
+            "system_prompt": false,
+            "enabled": false,
+            "marker": false,
+            "name": "| Task",
+            "role": "system",
+            "content": "{{// The main task for the model to complete. }}{{trim}}\nRespond, continuing directly from the final line of the last message in the conversation with new content only. ((OOC: Communicate Out-Of-Character like this.)) Explicit content is allowed, no plot armor. Don't play as {{user}}. Keep your response length {{getvar::length}}. Never end on handover cues; finish naturally.",
+            "injection_position": 1,
+            "injection_depth": 0,
+            "injection_order": 99,
+            "injection_trigger": [],
+            "forbid_overrides": false
+        },
+        {
+            "identifier": "c0a95f7e-fb59-48f2-867b-95de8a96a536",
+            "system_prompt": false,
+            "enabled": false,
+            "marker": false,
+            "name": "⌊ </task>",
+            "role": "system",
+            "content": "</task>",
+            "injection_position": 1,
+            "injection_depth": 0,
+            "injection_order": 99,
+            "injection_trigger": [],
+            "forbid_overrides": false
+        },
+        {
+            "identifier": "95cf522b-90b3-42c7-aef5-6b6df8bc2861",
+            "system_prompt": false,
+            "enabled": false,
+            "marker": false,
+            "name": "⌈ <output_format>",
+            "role": "system",
+            "content": "\n<output_format>",
+            "injection_position": 1,
+            "injection_depth": 0,
+            "injection_order": 99,
+            "injection_trigger": [],
+            "forbid_overrides": false
+        },
+        {
+            "identifier": "593fc752-b757-47da-b9a4-467c323456cb",
+            "system_prompt": false,
+            "enabled": false,
+            "marker": false,
+            "name": "⌊ </output_format>",
+            "role": "system",
+            "content": "</output_format>",
+            "injection_position": 1,
+            "injection_depth": 0,
+            "injection_order": 101,
+            "injection_trigger": [],
+            "forbid_overrides": false
+        },
+        {
+            "identifier": "b6cdff24-2977-4904-abe0-225f5760c63c",
+            "system_prompt": false,
+            "enabled": false,
+            "marker": false,
+            "name": "⌈ <final_instructions>",
+            "role": "system",
+            "content": "\n<final_instructions>",
+            "injection_position": 1,
+            "injection_depth": 0,
+            "injection_order": 101,
+            "injection_trigger": [],
+            "forbid_overrides": false
+        },
+        {
+            "identifier": "dd13f4ad-e323-4b9f-a941-370427fc4bf0",
+            "system_prompt": false,
+            "enabled": false,
+            "marker": false,
+            "name": "⌊ </final_instructions>",
+            "role": "system",
+            "content": "</final_instructions>",
+            "injection_position": 1,
+            "injection_depth": 0,
+            "injection_order": 101,
             "injection_trigger": [],
             "forbid_overrides": false
         }
@@ -1174,7 +1286,15 @@
                     "enabled": true
                 },
                 {
+                    "identifier": "58cec410-bd0b-4a5e-872e-b16f01461201",
+                    "enabled": true
+                },
+                {
                     "identifier": "509bbfe7-b6d4-4b4c-947e-ae46ee0e0e28",
+                    "enabled": true
+                },
+                {
+                    "identifier": "35cdd532-dfc3-4739-b404-1864b7f82269",
                     "enabled": true
                 },
                 {
@@ -1238,7 +1358,23 @@
                     "enabled": true
                 },
                 {
+                    "identifier": "596bc331-9500-4a13-9e20-7c41cf758641",
+                    "enabled": true
+                },
+                {
+                    "identifier": "3f1d7de3-a9a1-4f66-aae0-3b1f6f913aad",
+                    "enabled": true
+                },
+                {
+                    "identifier": "70bc3b69-e21c-4021-b6a6-bdfdec26b0a2",
+                    "enabled": true
+                },
+                {
                     "identifier": "1cc6303c-28ee-455f-a966-ab84a8b7b7c6",
+                    "enabled": true
+                },
+                {
+                    "identifier": "ebbc94e5-f5ca-425e-9210-be40f64c0098",
                     "enabled": true
                 },
                 {
@@ -1250,6 +1386,10 @@
                     "enabled": true
                 },
                 {
+                    "identifier": "jailbreak",
+                    "enabled": true
+                },
+                {
                     "identifier": "nsfw",
                     "enabled": true
                 },
@@ -1258,11 +1398,7 @@
                     "enabled": true
                 },
                 {
-                    "identifier": "jailbreak",
-                    "enabled": true
-                },
-                {
-                    "identifier": "3f1d7de3-a9a1-4f66-aae0-3b1f6f913aad",
+                    "identifier": "738693f4-31e5-44bb-88ed-dcd4d8e20665",
                     "enabled": true
                 },
                 {
@@ -1302,11 +1438,39 @@
                     "enabled": true
                 },
                 {
+                    "identifier": "24d89740-031a-45c5-aff7-3292afde3f95",
+                    "enabled": true
+                },
+                {
+                    "identifier": "c3c7a9bf-6914-4f2b-ba2d-c45c677bdca6",
+                    "enabled": true
+                },
+                {
+                    "identifier": "c0a95f7e-fb59-48f2-867b-95de8a96a536",
+                    "enabled": true
+                },
+                {
+                    "identifier": "95cf522b-90b3-42c7-aef5-6b6df8bc2861",
+                    "enabled": true
+                },
+                {
                     "identifier": "be1189ec-f48e-43a1-a263-73501ca4e950",
                     "enabled": true
                 },
                 {
+                    "identifier": "593fc752-b757-47da-b9a4-467c323456cb",
+                    "enabled": true
+                },
+                {
+                    "identifier": "b6cdff24-2977-4904-abe0-225f5760c63c",
+                    "enabled": true
+                },
+                {
                     "identifier": "3b610e25-2bce-443b-b4e6-2069c22adf73",
+                    "enabled": true
+                },
+                {
+                    "identifier": "dd13f4ad-e323-4b9f-a941-370427fc4bf0",
                     "enabled": true
                 },
                 {
@@ -1334,8 +1498,8 @@
     "continue_postfix": "\n\n",
     "function_calling": false,
     "show_thoughts": true,
-    "reasoning_effort": "auto",
-    "verbosity": "high",
+    "reasoning_effort": "high",
+    "verbosity": "auto",
     "enable_web_search": false,
     "seed": -1,
     "n": 1,

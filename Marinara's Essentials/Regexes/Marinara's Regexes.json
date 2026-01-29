@@ -2,7 +2,7 @@
     {
         "id": "e2b9f676-c150-4ce7-8ad3-78066891e55a",
         "scriptName": "Clean HTML (From Outgoing Prompt)",
-        "findRegex": "/[ \\t]?<(?!\\!--)(?!\\/?(?:font|lie)\\b)(?:\"[^\"]*\"|'[^']*'|[^'\">])*>/g",
+        "findRegex": "/[ \\t]?<(?!\\!--)(?!\\/?(?:font|lie|filter)\\b)(?:\"[^\"]*\"|'[^']*'|[^'\">])*>/g",
         "replaceString": "",
         "trimStrings": [],
         "placement": [
@@ -104,7 +104,6 @@
         "replaceString": ", ",
         "trimStrings": [],
         "placement": [
-            1,
             2,
             3,
             5,
@@ -155,6 +154,23 @@
         "disabled": false,
         "markdownOnly": false,
         "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "e1d4ec06-2e35-45af-ad4c-ab34a47e9dd3",
+        "scriptName": "Fuck Ozone",
+        "findRegex": "/\\s*[^.!?]*\\bozone\\b[^.!?]*[.!?]\\s*/gi",
+        "replaceString": " ",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": true,
         "runOnEdit": true,
         "substituteRegex": 0,
         "minDepth": null,
